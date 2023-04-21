@@ -1,4 +1,38 @@
+@use 'variables';
+@use 'mixins';
 
-.modal-navbar__background{
+.modal-navbar{
    // display: none;
+   position: absolute;
+   background-color: variables.$White;
+   height: 100%;
+   width: 250px;
+   padding: 28px 24px;
+
+   &__close-icon{
+       &:hover{
+           cursor: pointer;
+       }
+   }
+
+   &__items{
+      list-style: none; // quitar viñetas de la lista
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 200px;
+      margin-top: 50px;
+   }
+
+   &__link{
+      text-decoration: none;
+      color: variables.$Very-dark-blue;
+      font-weight: 700;
+      font-size: 1.1rem
+   }
+   
+
+   &__background{
+       @include mixins.modal-background;
+   }
 }
